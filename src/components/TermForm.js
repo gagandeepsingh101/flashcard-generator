@@ -13,16 +13,15 @@ const TermForm = ({ errors, touched, values, updateImagePreview }) => {
 					{values.map((term, index) => (
 						<div
 							key={index}
-							className="w-full h-full flex flex-col flex-wrap  items-center gap-2 my-5 lg:flex-row lg:gap-3">
-							<h1 className="text-xl bg-red-500 text-white px-3 py-1 rounded-full h-fit">{index+1}</h1>
-							<div className="w-full h-1/3 flex lg:h-full lg:w-1/3 flex-col gap-2">
+							className="w-full h-full flex flex-row flex-wrap gap-2 my-10 md:gap-6 md:items-center lg:gap-3">
+							<h1 className="w-full text-center text-xl bg-red-500 text-white md:w-fit px-3 py-1 rounded-full h-fit">{index+1}</h1>
+							<div className="w-full h-1/3 flex md:w-3/4 lg:h-full lg:w-1/3 flex-col gap-2">
 								<label
 									htmlFor={`termInfo.${index}.termName`}
 									className="text-gray-500 lg:text-lg">
 									Enter Term Name
 								</label>
 								<Field
-									key={index}
 									type="text"
 									name={`termInfo.${index}.termName`}
 									className={
@@ -39,7 +38,7 @@ const TermForm = ({ errors, touched, values, updateImagePreview }) => {
 										: ""}
 								</p>
 							</div>
-							<div className="w-full h-1/3 flex flex-col gap-2 lg:w-1/3 lg:h-full">
+							<div className="w-full h-1/3 flex flex-col gap-2 md:w-1/2 lg:w-1/3 lg:h-full">
 								<label
 									htmlFor={`termInfo.${index}.termDescription`}
 									className="text-gray-500 lg:text-lg">
@@ -47,7 +46,6 @@ const TermForm = ({ errors, touched, values, updateImagePreview }) => {
 								</label>
 								<Field
 									as="textarea"
-									key={index}
 									type="text"
 									name={`termInfo.${index}.termDescription`}
 									className={
@@ -65,22 +63,22 @@ const TermForm = ({ errors, touched, values, updateImagePreview }) => {
 										: ""}
 								</p>
 							</div>
-							<div className="w-full h-1/3 flex flex-col gap-2 lg:w-1/6 lg:h-full">
+							<div className="w-7/12 h-1/3 flex flex-col md:w-40 lg:w-1/6 lg:h-full">
 								<UploadImageButton
 									values={term.termImage}
 									updateImagePreview={updateImagePreview}
 									index={index}
 								/>
 							</div>
-							<div className="w-full h-1/3 flex flex-col gap-2 lg:w-1/12 lg:h-full">
-								<MdEdit className="text-blue-500 h-1/2 w-10 p-1 rounded-full cursor-pointer"></MdEdit>
+							<div className="w-3/12 h-full flex flex-row md:w-20 md:flex-col lg:w-1/12 lg:h-full">
+								<MdEdit className="text-blue-500 w-1/2 h-full p-1 rounded-full cursor-pointer md:w-5/12 lg:w-4/12"></MdEdit>
 								<MdDelete
 									onClick={() =>
 										values.length <= 1
 											? toast.error("Can't delete last term")
 											: arrayhelper.remove(index)
 									}
-									className="text-red-500 h-1/2 w-10 p-1 rounded-full cursor-pointer"></MdDelete>
+									className="text-red-500 w-1/2 h-full p-1 rounded-full cursor-pointer md:w-5/12 lg:w-4/12"></MdDelete>
 							</div>
 						</div>
 					))}

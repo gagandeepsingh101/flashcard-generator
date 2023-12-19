@@ -51,11 +51,11 @@ const UploadImageButton = ({
 					/>
 				</button>
 			) : (
-				<div className="w-fit h-full flex">
+				<div className="w-fit h-full flex ">
 					<img
 						src={values}
 						alt="preview"
-						className="w-full h-full object-cover lg:w-fit lg:h-20"
+						className="w-2/3 h-1/2 object-cover  lg:w-fit lg:h-20"
 					/>
 					<MdDelete
 						className={"text-2xl cursor-pointer text-red-500 "}

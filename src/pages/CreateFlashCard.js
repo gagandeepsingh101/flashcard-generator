@@ -71,7 +71,7 @@ const CreateFlashCard = () => {
 								setFieldValue(`termInfo[${idx}].termImage`, value);
 							}}
 						/>
-						<button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-2/12 mx-auto" type="submit">Create Flashcard</button>
+						<button className="w-2/3 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded md:w-4/12 lg:w-2/12 mx-auto" type="submit">Create Flashcard</button>
 					</Form>
 				)}
 			</Formik>
