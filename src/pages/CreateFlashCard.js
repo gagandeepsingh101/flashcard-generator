@@ -4,10 +4,14 @@ import * as Yup from "yup";
 import { useSubmitFlashcardData } from "../hooks/useSubmitFlashcardData";
 import GroupFieldSection from "../components/GroupFieldSection";
 import TerFieldSection from "../components/TermFieldSection";
+import { useDispatch } from "react-redux";
 
 const CreateFlashCard = () => {
+
+  
   // Custom hook for handling flashcard data submission
   const handleSubmit = useSubmitFlashcardData;
+  const dispatch = useDispatch();
 
   // Validation schema using Yup
   const validationCreateFlashcardData = Yup.object().shape({
@@ -50,7 +54,7 @@ const CreateFlashCard = () => {
         validationSchema={validationCreateFlashcardData}
         onSubmit={(values, { resetForm }) => {
           // Call the custom submit function with values and form reset
-          handleSubmit(values, resetForm);
+          handleSubmit(values, resetForm,dispatch);
         }}
       >
         {({ values, setFieldValue, errors, touched }) => (

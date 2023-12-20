@@ -7,13 +7,15 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CreateFlashCard from "./pages/CreateFlashCard";
 import ShowFlashCard from "./pages/ShowFlashCard";
 import Error from "./components/Error";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App></App>,
-    errorElement: <Error />,
+		errorElement: <Error />,
 		children: [
 			{
 				path: "/",
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
 			{
 				path: "/show",
 				element: <ShowFlashCard />,
-        errorElement: <Error />,
+				errorElement: <Error />,
 			},
 		],
 	},
@@ -31,9 +33,11 @@ const router = createBrowserRouter([
 
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router}>
-			<App></App>
-		</RouterProvider>
+		<Provider store={store}>
+			<RouterProvider router={router}>
+				<App></App>
+			</RouterProvider>
+		</Provider>
 	</React.StrictMode>
 );
 reportWebVitals();

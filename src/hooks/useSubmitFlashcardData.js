@@ -1,8 +1,6 @@
 import toast from "react-hot-toast";
-
-export const useSubmitFlashcardData = (values, resetForm) => {
-	// Log the submitted values for debugging or verification
-	console.log(values);
+import { addFlashCardData } from "../redux/flashcardReducers";
+export const useSubmitFlashcardData = (values, resetForm, dispatch) => {
 
 	// Check if a Group image is uploaded
 	if (values.groupInfo.groupImage === "") {
@@ -29,20 +27,22 @@ export const useSubmitFlashcardData = (values, resetForm) => {
 		flashCardsData: values,
 	};
 
+	// Add Flashcard data to redux store
+	dispatch(addFlashCardData(data));
+
 	// Check if 'flashcards' key exists in local storage
 	if (localStorage.getItem("flashcards") === null) {
 
 		// If not, create a new array with the current flashcard data and store it
 		localStorage.setItem("flashcards", JSON.stringify([data]));
-	} 
-    else {
+	} else {
 
 		// If 'flashcards' key exists, retrieve the existing data from local storage
-		const flashcards = JSON.parse(localStorage.getItem("flashcards"));
+		let flashcards = JSON.parse(localStorage.getItem("flashcards"));
 
 		// Add the current flashcard data to the existing array
-		flashcards.push(data);
-        
+		flashcards=[...flashcards, data];
+
 		// Store the updated array back in local storage
 		localStorage.setItem("flashcards", JSON.stringify(flashcards));
 	}
