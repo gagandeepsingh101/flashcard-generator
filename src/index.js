@@ -9,6 +9,8 @@ import ShowFlashCard from "./pages/ShowFlashCard";
 import Error from "./components/Error";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ShowAllCards from "./components/ShowAllCards";
+import ShowCompleteSingleCard from "./components/ShowCompleteSingleCard";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
@@ -26,6 +28,18 @@ const router = createBrowserRouter([
 				path: "/show",
 				element: <ShowFlashCard />,
 				errorElement: <Error />,
+				children: [
+					{
+						path: "/show",
+						element: <ShowAllCards />,
+						errorElement: <Error />,
+					},
+					{
+						path: "/show/:id",
+						element: <ShowCompleteSingleCard />,
+						errorElement: <Error />,
+					},
+				],
 			},
 		],
 	},

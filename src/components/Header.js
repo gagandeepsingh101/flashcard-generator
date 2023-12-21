@@ -1,10 +1,10 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 
 const Header = () => {
   // Get the current pathname using useLocation hook
   const { pathname } = useLocation();
-
+  const {id}= useParams();
   return (
     <div className="h-[17vh] w-full flex flex-col justify-between">
       {/* Logo Section */}
@@ -37,8 +37,8 @@ const Header = () => {
             <hr
               className={
                 "transition-all border-[3px] duration-500 ease-in-out rounded-3xl overflow-hidden" +
-                (pathname === "/"
-                  ? "  border-red-500 translate-x-[0]"
+                (pathname === "/" 
+                  ? "  border-red-500 translate-x-[0] "
                   : " translate-x-[-100%] border-gray-200")
               }
             />
@@ -48,14 +48,14 @@ const Header = () => {
             to="/show"
             className={
               "text-lg z-50 transition-all duration-500 ease-in-out overflow-hidden font-semibold " +
-              (pathname === "/show" ? " text-red-500" : "text-gray-500")
+              (pathname === "/show" || pathname === `/show/${id}` ? " text-red-500" : "text-gray-500")
             }
           >
             Show Flashcard
             <hr
               className={
                 "border-[3px] transition-all duration-500 ease-in-out rounded-3xl overflow-hidden " +
-                (pathname === "/show"
+                (pathname === "/show" || pathname === `/show/${id}`
                   ? "  border-red-500 translate-x-[0]"
                   : " translate-x-[-100%] border-gray-200")
               }
