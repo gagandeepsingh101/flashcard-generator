@@ -29,14 +29,14 @@ const Header = () => {
           <NavLink
             to="/"
             className={
-              "text-lg h-full box-border z-50 transition-all duration-500 ease-in-out overflow-hidden font-semibold " +
+              "text-lg h-full box-border z-50 transition-all duration-500 ease-in-out overflow-hidden font-semibold hover:text-red-500 " +
               (pathname === "/" ? " text-red-500" : "text-gray-500")
             }
           >
             Create Flashcard
             <hr
               className={
-                "transition-all border-[3px] duration-500 ease-in-out rounded-3xl overflow-hidden" +
+                "transition-all border-[3px] duration-500 ease-in-out rounded-3xl overflow-hidden hover:border-red-500 " +
                 (pathname === "/" 
                   ? "  border-red-500 translate-x-[0] "
                   : " translate-x-[-100%] border-gray-200")
@@ -47,7 +47,7 @@ const Header = () => {
           <NavLink
             to="/show"
             className={
-              "text-lg z-50 transition-all duration-500 ease-in-out overflow-hidden font-semibold " +
+              "text-lg z-50 transition-all duration-500 ease-in-out overflow-hidden font-semibold hover:text-red-500 " +
               (pathname === "/show" || pathname === `/show/${id}` ? " text-red-500" : "text-gray-500")
             }
           >

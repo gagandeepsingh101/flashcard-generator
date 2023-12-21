@@ -53,7 +53,7 @@ const ShowAllCards = () => {
             <GiTireIronCross
               onClick={() => dispatch(deleteFlashcard(data.id))}
               className=" text-red-500 hover:text-red-700 absolute -right-2 -top-2 w-8 h-8 cursor-pointer transition-all duration-200 ease-linear hover:rotate-180"
-            ></GiTireIronCross>
+            />
           </>
         ) : (
           // Rendering for the rest of the cards

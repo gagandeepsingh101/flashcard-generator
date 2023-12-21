@@ -22,11 +22,14 @@ const flashCardSlice = createSlice({
 				);
 				localStorage.setItem("flashcards", JSON.stringify(filterFlashCard));
 				toast.success("Flashcard deleted successfully");
-				return [...filterFlashCard]
+				return [...filterFlashCard];
 			}
 		},
 	},
 });
-export const { addFlashCardData, getLocalFlashcarData, deleteFlashcard } =
-	flashCardSlice.actions;
+export const {
+	addFlashCardData,
+	getLocalFlashcarData,
+	deleteFlashcard,
+} = flashCardSlice.actions;
 export default flashCardSlice.reducer;
