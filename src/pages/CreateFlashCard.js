@@ -3,8 +3,8 @@ import React from "react";
 import * as Yup from "yup";
 import { useSubmitFlashcardData } from "../hooks/useSubmitFlashcardData";
 import GroupFieldSection from "../components/GroupFieldSection";
-import TerFieldSection from "../components/TermFieldSection";
 import { useDispatch } from "react-redux";
+import TermFieldArraySection from "../components/TermFieldArraySection";
 
 const CreateFlashCard = () => {
 
@@ -70,7 +70,7 @@ const CreateFlashCard = () => {
             />
 
             {/* Term Field Section */}
-            <TerFieldSection
+            <TermFieldArraySection
               errors={errors.termInfo}
               touched={touched.termInfo}
               values={values.termInfo}

@@ -5,10 +5,8 @@ import UploadImageButton from "./UploadImageButton";
 const GroupFieldSection = ({ errors, touched, values, updateImagePreview }) => {
 	return (
 		<div className="w-full flex flex-wrap mx-auto h-[45vh] bg-white px-2 py-3 rounded-md md:h-[40vh] lg:gap-4 lg:h-[35vh]">
-
 			{/* Group Name and Image Section */}
 			<div className="w-full h-1/2 flex flex-wrap gap-2 md:h-1/3 lg:gap-3 ">
-			
 				{/* Group Name Input */}
 				<div className="w-full h-2/3 flex flex-col gap-1 md:w-1/2 md:h-full lg:h-fit ">
 					<label
@@ -17,13 +15,14 @@ const GroupFieldSection = ({ errors, touched, values, updateImagePreview }) => {
 						Enter Group Name
 					</label>
 					<Field
+						placeholder="Write Group Name"
 						type="text"
 						name="groupInfo.groupName"
 						className={
-							"w-full border-2 focus:outline-none rounded-sm px-2 py-1 lg:py-2 md:rounded-md lg:rounded-lg " +
+							"w-full border-2 focus:outline-none rounded-sm px-2 focus:border-black py-1 lg:py-2 md:rounded-md lg:rounded-lg " +
 							(errors?.groupName && touched?.groupName
 								? "border-red-500 text-red-500"
-								: "border-black text-black")
+								: "border-grey-300 text-black")
 						}
 					/>
 					<div className="h-5 text-red-500">
@@ -50,13 +49,14 @@ const GroupFieldSection = ({ errors, touched, values, updateImagePreview }) => {
 				<Field
 					type="text"
 					as="textarea"
+					placeholder="Write Group Description"
 					name="groupInfo.groupDescription"
 					rows={3}
 					className={
-						"w-full border-2 focus:outline-none rounded-sm px-2 py-1 md:rounded-md lg:py-2 lg:rounded-lg " +
+						"w-full border-2 focus:outline-none rounded-sm px-2 py-1 focus:border-black md:rounded-md lg:py-2 lg:rounded-lg " +
 						(errors?.groupDescription && touched?.groupDescription
 							? "border-red-500 text-red-500"
-							: "border-black text-black")
+							: "border-grey-300 text-black")
 					}
 				/>
 				<div className="text-red-500 h-5">

@@ -47,7 +47,7 @@ const UploadImageButton = ({ values, updateImagePreview, index }) => {
 			onClick={(e) =>
 			  e.target.parentElement.querySelector("input[type=file]").click()
 			}
-			className="w-fit h-fit p-1 border-blue-500 border-2 flex text-blue-500 rounded-sm items-center px-2 py-3 md:rounded-md lg:gap-2 lg:text-lg lg:rounded-lg"
+			className="w-fit h-fit p-1 border-blue-500 border-2 flex text-blue-500 rounded-sm items-center px-2 py-3 md:rounded-md lg:gap-2 lg:text-lg lg:rounded-lg hover:bg-blue-600 hover:text-white "
 		  >
 			<MdOutlineUploadFile
 			  aria-disabled={true}
