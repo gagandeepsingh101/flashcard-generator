@@ -168,7 +168,7 @@ npm test
 
 Contributions are welcome! Here are several ways you can contribute:
 
-- **[Submit Pull Requests](https://github.com/gagandeepsingh101/flashcard-generator/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+- **[Submit Pull Requests](https://github.com/gagandeepsingh101/flashcard-generator/pulls)**: Review open PRs, and submit your own PRs.
 - **[Join the Discussions](https://github.com/gagandeepsingh101/flashcard-generator/discussions)**: Share your insights, provide feedback, or ask questions.
 - **[Report Issues](https://github.com/gagandeepsingh101/flashcard-generator/issues)**: Submit bugs found or log feature requests for GAGANDEEPSINGH101.
 
