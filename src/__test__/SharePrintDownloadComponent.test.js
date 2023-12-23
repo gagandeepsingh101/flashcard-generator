@@ -1,14 +1,11 @@
 import {
-	act,
 	fireEvent,
 	render,
-	screen,
-	waitFor,
+	screen
 } from "@testing-library/react";
 import "jspdf-autotable"; // Import jspdf-autotable for table generation
 import React from "react";
 import SharePrintDownloadComponent from "../components/SharePrintDownloadComponent";
-import { useGeneratePdf } from "../hooks/useGeneratePdf";
 
 const setShowModal = jest.fn();
 const singleFlashCardData = {
