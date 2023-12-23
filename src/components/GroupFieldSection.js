@@ -40,7 +40,7 @@ const GroupFieldSection = ({ errors, touched, values, updateImagePreview }) => {
 			</div>
 
 			{/* Group Description Section */}
-			<div className="w-full h-28 flex flex-col gap-1 mt-2 lg:mt-0 lg:w-3/4 lg:h-1/2">
+			<div className="w-full h-28 flex flex-col gap-1 mt-2 lg:mt-0 lg:w-3/4 lg:h-full">
 				<label
 					htmlFor="groupInfo.groupDescription"
 					className="lg:text-lg text-gray-500">

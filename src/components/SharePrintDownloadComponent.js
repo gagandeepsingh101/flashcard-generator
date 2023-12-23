@@ -1,4 +1,4 @@
-import "jspdf-autotable"; // Import jspdf-autotable for table generation
+import "jspdf-autotable";
 import React from "react";
 import { LiaShareSolid } from "react-icons/lia";
 import { SlCloudDownload, SlPrinter } from "react-icons/sl";
@@ -9,9 +9,12 @@ const SharePrintDownloadComponent = ({ singleFlashCardData, setShowModal }) => {
 	// Function to download the PDF
 	const flashCardPdf = useGeneratePdf(singleFlashCardData.flashCardsData);
 	return (
-		<div className="w-full h-1/6 mx-auto flex flex-wrap rounded-xl md:w-2/12 md:flex-col md:h-1/2 md:gap-5">
+		<div
+			data-testid="test-share-print-download-component"
+			className="w-full h-1/6 mx-auto flex flex-wrap rounded-xl md:w-2/12 md:flex-col md:h-1/2 md:gap-5">
 			{/* Share Button */}
 			<button
+				data-testid="test-share-btn"
 				onClick={() => setShowModal(true)}
 				className="w-[30%] h-2/3 flex items-center gap-2 text-black cursor-pointer transition-all duration-300 ease-in-out bg-white rounded-xl hover:bg-red-500 hover:text-white md:w-full md:h-1/4 md:px-4">
 				<LiaShareSolid className="hidden lg:block text-2xl font-bold" />
@@ -22,6 +25,7 @@ const SharePrintDownloadComponent = ({ singleFlashCardData, setShowModal }) => {
 
 			{/* Download Button */}
 			<button
+				data-testid="test-download-btn"
 				onClick={() => {
 					toast.promise(
 						flashCardPdf.save("flashcard.pdf", { returnPromise: true }),
@@ -41,6 +45,7 @@ const SharePrintDownloadComponent = ({ singleFlashCardData, setShowModal }) => {
 
 			{/* Print Button */}
 			<button
+				data-testid="test-print-btn"
 				onClick={() => {
 					window.open(flashCardPdf.output("bloburl"), "_blank");
 				}}
