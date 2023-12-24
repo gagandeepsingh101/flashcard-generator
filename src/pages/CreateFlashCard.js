@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import TermFieldArraySection from "../components/TermFieldArraySection";
 
 const CreateFlashCard = () => {
-
   
   // Custom hook for handling flashcard data submission
   const handleSubmit = useSubmitFlashcardData;
@@ -58,7 +57,7 @@ const CreateFlashCard = () => {
         }}
       >
         {({ values, setFieldValue, errors, touched }) => (
-          <Form className="flex flex-col gap-6">
+          <Form className="flex flex-col gap-2">
             {/* Group Field Section */}
             <GroupFieldSection
               errors={errors.groupInfo}

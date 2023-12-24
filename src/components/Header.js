@@ -10,10 +10,10 @@ const Header = () => {
 			data-testid="test-header-logo"
 			className="h-[17vh] w-full flex flex-col justify-between">
 			{/* Logo Section */}
-			<div className="h-[7vh] w-full bg-white">
+			<div className="h-[7.5vh] w-full p-2 bg-white">
 				<img
 					alt=""
-					srcSet="https://api.sertifier.com/userdata/08daf47b-89e4-cd1d-208e-96834580c530/d747e244-cfe7-4a53-b0b4-47ad8e0d9ad4.png"
+					srcSet="https://almablog-media.s3.ap-south-1.amazonaws.com/logo_a71333ba9fe4d72fc96d_4cf04d27de.png"
 					className="h-full w-fit"
 				/>
 			</div>
