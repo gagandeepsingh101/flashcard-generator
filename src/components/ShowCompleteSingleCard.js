@@ -30,7 +30,7 @@ const ShowCompleteSingleCard = () => {
 			{showModal && <Model setShowModal={setShowModal} />}
 
 			{/* Header section */}
-			<div className="flex flex-col  w-full h-[15%] items-center md:gap-3">
+			<div className="flex flex-col h-[32%]  w-full md:h-[18%] items-center md:gap-3">
 				<h1 className="text-lg w-full h-1/2 flex items-center gap-3 md:text-2xl font-bold">
 					<IoIosArrowRoundBack
 						onClick={() => navigate("/show")}
@@ -38,11 +38,10 @@ const ShowCompleteSingleCard = () => {
 					/>
 					<span>{groupInfo.groupName}</span>
 				</h1>
-				<p className="w-[63%] md:w-[92%] mx-auto h-1/2 ">
+				<p className="w-[92%] h-3/4 mx-auto overflow-hidden md:h-4/5 text-sm ">
 					{groupInfo.groupDescription}
 				</p>
 			</div>
-
 			{/* Main content section */}
 			<div className="w-full h-[85%]  flex flex-wrap py-4 md:gap-5">
 				{/* Flashcards list */}
@@ -61,7 +60,7 @@ const ShowCompleteSingleCard = () => {
 							<p
 								onClick={() => setActiveTermInfoIndex(index)}
 								className={
-									"cursor-pointer w-full truncate hover:text-red-500 " +
+									"cursor-pointer w-full text-[12px] truncate hover:text-red-500 my-1 lg:text-base " +
 									(activeTermInfoIndex === index
 										? " text-red-500 font-bold"
 										: " text-black")
@@ -81,7 +80,10 @@ const ShowCompleteSingleCard = () => {
 				/>
 
 				{/* Additional components */}
-				<SharePrintDownloadComponent singleFlashCardData={singleFlashCardData} setShowModal={setShowModal} />
+				<SharePrintDownloadComponent
+					singleFlashCardData={singleFlashCardData}
+					setShowModal={setShowModal}
+				/>
 			</div>
 		</div>
 	);

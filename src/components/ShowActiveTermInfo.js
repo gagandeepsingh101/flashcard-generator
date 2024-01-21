@@ -11,15 +11,15 @@ const ShowActiveTermInfo = ({
 			{/* Displaying selected term */}
 			<div className="w-7/12 h-4/5 mx-auto flex flex-col gap-3    rounded-xl md:w-7/12 md:h-full">
 				{/* Term content */}
-				<div className="w-full h-5/6 p-5 flex-col flex rounded-xl items-center justify-evenly bg-white md:flex-row">
+				<div className="w-full h-5/6 p-2 md:p-5 flex-col flex rounded-xl items-center justify-evenly bg-white md:flex-row">
 					{/* Term image */}
 					<img
 						srcSet={termInfo[activeTermInfoIndex].termImage}
-						className=" w-full h-2/3 md:w-[45%] md:h-3/4"
+						className=" hidden md:block md:w-[45%] md:h-3/4"
 						alt=""
 					/>
 					{/* Term description */}
-					<p className="w-11/12 truncate h-1/4 md:w-[45%] md:h-3/4">
+					<p className="w-11/12 break-all text-justify h-full text-[12px] md:w-[45%] overflow-hidden  md:h-3/4 lg:text-base">
 						{termInfo[activeTermInfoIndex].termDescription}
 					</p>
 				</div>

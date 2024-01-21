@@ -7,7 +7,8 @@ import { useDispatch } from "react-redux";
 
 const RenderCard = ({ data, index }) => {
 	const { groupInfo, termInfo } = data.flashCardsData;
-    const dispatch=useDispatch();
+	const dispatch = useDispatch();
+	console.log(groupInfo.groupDescription.length);
 	return (
 		<div
 			key={data.id}
@@ -20,13 +21,13 @@ const RenderCard = ({ data, index }) => {
 						className="w-20 h-20 rounded-full mx-auto absolute -top-10 left-1/3 translate-x-2 md:translate-x-1/4"
 						alt=""
 					/>
-					<div className="w-full h-3/5 absolute left-0 top-1/3 flex flex-col justify-between items-center">
+					<div className="w-full h-[70%] absolute left-0 top-1/4 flex flex-col justify-between items-center">
 						<h1 className="h-1/4 flex flex-col text-center font-bold truncate">
 							{groupInfo.groupName}
 						</h1>
-						<p className="h-2/4 flex flex-col text-center">
-							<span>{groupInfo.groupDescription}</span>
-							<span>{termInfo.length} Cards</span>
+						<p className="  w-full h-1/2 flex flex-col overflow-hidden text-center ">
+							<span className=" w-full text-sm h-3/4 overflow-hidden ">{groupInfo.groupDescription}</span>
+							<span className="w-full h-1/4">{termInfo.length} Cards</span>
 						</p>
 						<Link
 							to={`/show/${data.id}`}
