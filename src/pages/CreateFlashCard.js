@@ -22,7 +22,7 @@ const CreateFlashCard = () => {
       groupDescription: Yup.string()
         .required("Required")
         .min(15, "Must be 15 characters or more")
-        .max(350, "Must be 400 characters or less"),
+        .max(400, "Must be 400 characters or less"),
     }),
     termInfo: Yup.array().of(
       Yup.object().shape({
@@ -33,7 +33,7 @@ const CreateFlashCard = () => {
         termDescription: Yup.string()
           .required("Required")
           .min(15, "Must be 15 characters or more")
-          .max(100, "Must be 400 characters or less"),
+          .max(400, "Must be 400 characters or less"),
       })
     ),
   });
