@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 const RenderCard = ({ data, index }) => {
 	const { groupInfo, termInfo } = data.flashCardsData;
 	const dispatch = useDispatch();
-	console.log(groupInfo.groupDescription.length);
 	return (
 		<div
 			key={data.id}

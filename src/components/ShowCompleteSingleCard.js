@@ -38,7 +38,7 @@ const ShowCompleteSingleCard = () => {
 					/>
 					<span>{groupInfo.groupName}</span>
 				</h1>
-				<p className="w-[92%] h-3/4 mx-auto overflow-hidden md:h-4/5 text-sm ">
+				<p className="w-[92%] h-3/4 mx-auto overflow-hidden md:h-4/5 text-sm md:text-base ">
 					{groupInfo.groupDescription}
 				</p>
 			</div>
