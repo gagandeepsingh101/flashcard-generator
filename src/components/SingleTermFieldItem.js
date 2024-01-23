@@ -60,7 +60,7 @@ const SingleTermFieldItem = ({
 				</label>
 				<Field
 					as="textarea"
-					placeholder="Enter Term Description"
+					placeholder="Write Term Description"
 					type="text"
 					name={`termInfo.${index}.termDescription`}
 					className={
